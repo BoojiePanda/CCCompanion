@@ -1,4 +1,4 @@
-# CC Companion
+# Class Codex Companion
 
 CC Companion is a standalone World of Warcraft Retail companion addon for Class
 Codex. It preserves selected Class Codex interface and browsing preferences
