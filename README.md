@@ -20,7 +20,7 @@ you do not have to change them every time you log into a different character.
 ## Requirements
 
 - World of Warcraft Retail
-- Class Codex enabled
+- Class Codex by Icy Veins installed and enabled
 
 ## Commands
 
