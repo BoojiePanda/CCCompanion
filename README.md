@@ -1,25 +1,21 @@
 # Class Codex Companion
 
 CC Companion is a standalone World of Warcraft Retail companion addon for Class
-Codex. It preserves selected Class Codex interface and browsing preferences
-across characters while keeping class- and specialization-dependent choices
-separate.
+Codex. It remembers the selections in Class Codex's combined context menu, so
+you do not have to change them every time you log into a different character.
+
+![Class Codex context menu showing the remembered Source, Content, Class, Specialization, and Hero Talent selections](images/class-codex-context-selector.png)
 
 ## Features
 
-- Shares general Class Codex panel state across characters
-- Remembers floating or docked mode, panel position, open or minimized state,
-  active tab, escape-close preference, and supported collapsed-section state
-- Stores specialization-dependent preferences under the character's class token
-  and numeric specialization ID
-- Keeps Compendium class, specialization, source, content, and hero-talent
-  selections separate for each player specialization
-- Shares supported per-specialization stat, rotation, gear, trinket, crafting,
-  U.GG, and talent-pane preferences
-- Deep-copies saved tables to prevent shared-reference mutation
-- Excludes runtime caches, inspection state, loadout IDs, and pending talent
-  application data
-- Requires no external libraries and does not modify Class Codex files
+- Remembers the selected **Source**: Icy Veins or U.GG
+- Remembers the selected **Content**: Mythic+, Raid, or PvP
+- Remembers the selected **Class**
+- Remembers the selected **Specialization**
+- Remembers the selected **Hero Talent**
+- Restores the appropriate selections when you switch characters
+- Keeps specialization-dependent choices separate
+- Does not modify any Class Codex files
 
 ## Requirements
 
