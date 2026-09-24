@@ -2,7 +2,6 @@ local ADDON_NAME = ...
 
 local PREFIX = "|cff00ccffCC Companion:|r "
 local SCHEMA_VERSION = 3
-local resetPendingUntil
 local activeSpecKey
 
 -- Only these character-wide fields are shared. Unknown/new Class Codex fields
@@ -270,47 +269,6 @@ local function CaptureActiveSpec(label)
     if not stableKey then return false end
     if stableKey ~= activeSpecKey then return ActivateCurrentSpec("specialization restore") end
     return ProtectedCall(label, Capture)
-end
-
-local function CountSpecs()
-    local db = EnsureDatabase()
-    local count = 0
-    for _, value in pairs(db.specs) do
-        if type(value) == "table" then count = count + 1 end
-    end
-    return count
-end
-
-SLASH_CCCOMPANION1 = "/ccom"
-SlashCmdList.CCCOMPANION = function(message)
-    local command = strtrim(message or ""):lower()
-    if command == "status" or command == "" then
-        local stableKey = CurrentSpec()
-        Print(("active; %d specialization profile(s); current: %s"):format(CountSpecs(), stableKey or "unavailable"))
-    elseif command == "sync" then
-        local captured = ProtectedCall("sync", Capture)
-        if captured then
-            ProtectedCall("restore", Restore)
-            Print("current settings synchronized.")
-        end
-    elseif command == "reset" then
-        resetPendingUntil = (GetTime and GetTime() or 0) + 30
-        Print("type /ccom reset confirm within 30 seconds to delete shared data.")
-    elseif command == "reset confirm" then
-        local now = GetTime and GetTime() or 0
-        if not resetPendingUntil or now > resetPendingUntil then
-            resetPendingUntil = nil
-            Print("confirmation expired; use /ccom reset first.")
-            return
-        end
-        resetPendingUntil = nil
-        if type(CCCompanionDB) ~= "table" then CCCompanionDB = {} end
-        for key in pairs(CCCompanionDB) do CCCompanionDB[key] = nil end
-        EnsureDatabase()
-        Print("shared data reset; character-specific Class Codex data was not changed.")
-    else
-        Print("commands: status, sync, reset")
-    end
 end
 
 local frame = CreateFrame("Frame")

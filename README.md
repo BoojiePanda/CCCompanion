@@ -22,15 +22,6 @@ you do not have to change them every time you log into a different character.
 - World of Warcraft Retail
 - Class Codex by Icy Veins installed and enabled
 
-## Commands
-
-- `/ccom status` — show the current specialization profile and profile count
-- `/ccom sync` — immediately capture and restore the current profile
-- `/ccom reset` — request deletion of CC Companion's shared data
-- `/ccom reset confirm` — confirm the reset within 30 seconds
-
-Resetting CC Companion does not delete Class Codex's own character data.
-
 ## Installation
 
 1. Download or clone this repository.
