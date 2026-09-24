@@ -1,0 +1,9 @@
+## Interface: 120100
+## Title: |cFFFF8DA1CC Companion|r
+## Notes: Shares selected Class Codex character preferences across characters.
+## Author: SilverRavyn
+## Version: 1.1.1
+## RequiredDeps: ClassCodex
+## SavedVariables: CCCompanionDB
+
+CCCompanion.lua
