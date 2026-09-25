@@ -2,7 +2,9 @@
 ## Title: |cFFFF8DA1CC Companion|r
 ## Notes: Shares selected Class Codex character preferences across characters.
 ## Author: SilverRavyn
-## Version: 1.1.2
+## Version: 1.1.3
+## Category: Quality of Life
+## IconTexture: Interface\AddOns\cccompanion\CCCompanionCCCIcon.png
 ## RequiredDeps: ClassCodex
 ## SavedVariables: CCCompanionDB
 
